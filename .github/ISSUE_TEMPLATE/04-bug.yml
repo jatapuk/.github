@@ -1,0 +1,66 @@
+name: Bug
+description: Report a bug with reproduction details and supporting context.
+title: "[Bug] "
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only after `/skill:github-issues-setup plan <owner/repo>` reports `COMPLETE_NO_SETUP_ACTION`.
+
+        GitHub issue forms cannot set issue field values. Fill the pinned GitHub fields in the issue sidebar: `Priority`, `Effort`, `Risk`, `OpenSpec Change ID`, and `Source`.
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: What is happening now?
+      placeholder: Describe the bug you observed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: Describe the expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can someone reproduce the issue?
+      placeholder: |
+        1. Go to ...
+        2. Run ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: What environment, version, or setup is affected?
+      placeholder: |
+        - App / service:
+        - Environment:
+        - Version / commit:
+        - Browser / OS / device:
+    validations:
+      required: true
+  - type: textarea
+    id: supporting-evidence-or-context
+    attributes:
+      label: Supporting Evidence or Context
+      description: Add logs, screenshots, related issue links, or other context.
+      placeholder: Provide links, logs, screenshots, or related context.
+    validations:
+      required: false
+  - type: checkboxes
+    id: pinned-fields
+    attributes:
+      label: Pinned Issue Fields
+      description: Confirm you filled the pinned GitHub issue fields in the issue sidebar.
+      options:
+        - label: I filled `Priority`, `Effort`, `Risk`, `OpenSpec Change ID`, and `Source` in the GitHub UI.
+          required: true

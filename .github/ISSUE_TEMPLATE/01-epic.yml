@@ -1,0 +1,83 @@
+name: Epic
+description: Plan an epic that spans multiple features, workstreams, or phases.
+title: "[Epic] "
+type: Epic
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only after `/skill:github-issues-setup plan <owner/repo>` reports `COMPLETE_NO_SETUP_ACTION`.
+
+        GitHub issue forms cannot set issue field values. Fill the pinned GitHub fields in the issue sidebar: `Priority`, `Effort`, `Risk`, `OpenSpec Change ID`, and `Source`.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What outcome should this epic deliver?
+      placeholder: Describe the outcome and why it matters.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is included, and what is deliberately out of scope?
+      placeholder: List the expected work boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What must be true for this epic to be considered done?
+      placeholder: |
+        - Criterion 1
+        - Criterion 2
+    validations:
+      required: true
+  - type: textarea
+    id: source-context
+    attributes:
+      label: Source Context
+      description: Capture useful context, links, constraints, or source material. Do not repeat the pinned `Source` field value here.
+      placeholder: Link PRDs, docs, prior issues, or other source material.
+    validations:
+      required: true
+  - type: textarea
+    id: relationships
+    attributes:
+      label: Relationships
+      description: Record parent, child, or related issue links when they are already known.
+      placeholder: |
+        Parent:
+        Children:
+        Related:
+    validations:
+      required: false
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Note true blockers or sequencing dependencies.
+      placeholder: |
+        Blocked by:
+        Blocking:
+        Other dependencies:
+    validations:
+      required: false
+  - type: textarea
+    id: openspec-readiness
+    attributes:
+      label: OpenSpec Readiness
+      description: Explain whether OpenSpec work is already in place, still needed, or not needed. Do not repeat the pinned `OpenSpec Change ID` field value here.
+      placeholder: State the current OpenSpec state and any next step.
+    validations:
+      required: true
+  - type: checkboxes
+    id: pinned-fields
+    attributes:
+      label: Pinned Issue Fields
+      description: Confirm you filled the pinned GitHub issue fields in the issue sidebar.
+      options:
+        - label: I filled `Priority`, `Effort`, `Risk`, `OpenSpec Change ID`, and `Source` in the GitHub UI.
+          required: true
